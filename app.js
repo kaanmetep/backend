@@ -3,11 +3,12 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+require("./app_api/models/db");
+var apiRouter = require("./app_api/routes/index");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-require("./app_api/models/db");
 var app = express();
-
+app.use("/api", apiRouter);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

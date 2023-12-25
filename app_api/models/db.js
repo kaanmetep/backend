@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
-var dbURI = "mongodb://localhost/mekanbul";
+var dbURI =
+  "mongodb+srv://kaanpmete55:kmp123456@cluster0.c7indkx.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(dbURI);
 mongoose.connection.on("connected", function () {
   console.log(dbURI + "adresine baglandi");
